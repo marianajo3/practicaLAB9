@@ -166,5 +166,21 @@ $(function () {
 
     // ---------- init ----------
     refreshSession();
-    if (API.isLogged()) cargarProductos();
+    if (API.isLogged()) {
+        // Si ya hay sesión en sessionStorage, sincronizo roles con el server
+        // (por si refrescaste la página o iniciaste sesión en otra pestaña)
+        API.me()
+            .done(data => {
+                // reconstruyo pass desde el base64 solo para reusar API.login (no se guarda)
+                const token = sessionStorage.getItem("auth") || "";
+                const pass  = atob(token).split(":")[1] || "";
+                API.login(data.username, pass, data.roles);
+                refreshSession();
+                cargarProductos();
+            })
+            .fail(() => {                       // token expirado o inválido
+                API.logout();
+                refreshSession();
+            });
+    }
 });
