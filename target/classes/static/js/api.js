@@ -39,7 +39,8 @@ const API = (() => {
 
     return {
         // ---- sesión ----
-        login:  (user, pass) => setCredentials(user, pass),  // setCredentials + whoami
+        // NOTA: acepta 3er arg "roles" — si no se pasa, se hace /api/me para obtenerlos
+        login:  (user, pass, roles) => setCredentials(user, pass, roles),
         me:     () => ajax({ url: "/api/mensaje/me", method: "GET" }),
         logout: () => clearCredentials(),
         user:   () => currentUser(),

@@ -44,13 +44,13 @@ $(function () {
         if (!u || !p) { alert("Ingresa usuario y contraseña"); return; }
 
         console.log("[login] clicked, user=" + u);
-        API.login(u, p);                                  // setea header
+        API.login(u, p);                                  // setea header (roles=[] por ahora)
         console.log("[login] auth header listo, llamando /api/me");
 
         API.me()
             .done(function (data) {
                 console.log("[login] /api/me OK", data);
-                API.login(data.username, p, data.roles);  // actualizo roles
+                API.login(data.username, p, data.roles);  // actualizo roles en sessionStorage
                 console.log("[login] roles en sessionStorage =", API.roles(),
                             "isAdmin =", API.isAdmin());
                 $("#loginMsg").text("✅ Bienvenido " + data.username + " (" + data.roles.join(",") + ")");
