@@ -54,8 +54,8 @@ const API = (() => {
         admin:   () => ajax({ url: "/api/mensaje/admin",   method: "GET" }),
 
         // ---- productos (CRUD) ----
-        listarProductos: (page = 0, size = 50) =>
-            ajax({ url: `/api/productos?page=${page}&size=${size}&sort=id,asc`, method: "GET" }),
+        listarProductos: () =>
+            ajax({ url: "/api/productos", method: "GET" }),
 
         obtenerProducto: (id) =>
             ajax({ url: `/api/productos/${id}`, method: "GET" }),

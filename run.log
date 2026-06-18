@@ -35,54 +35,40 @@
 
  :: Spring Boot ::                (v3.3.4)
 
-2026-06-18T17:31:51.933-05:00  INFO 32128 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Starting Lab1806Application using Java 17.0.3.1 with PID 32128 (D:\Projects\lab_1806\target\classes started by User in D:\Projects\lab_1806)
-2026-06-18T17:31:51.938-05:00 DEBUG 32128 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Running with Spring Boot v3.3.4, Spring v6.1.13
-2026-06-18T17:31:51.940-05:00  INFO 32128 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : No active profile set, falling back to 1 default profile: "default"
-2026-06-18T17:31:52.051-05:00  INFO 32128 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-06-18T17:31:52.052-05:00  INFO 32128 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-06-18T17:31:53.518-05:00  INFO 32128 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-18T17:31:53.674-05:00  INFO 32128 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 2 JPA repository interfaces.
-2026-06-18T17:31:55.271-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-06-18T17:31:55.301-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-18T17:31:55.302-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2026-06-18T17:31:55.419-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-06-18T17:31:55.422-05:00  INFO 32128 --- [lab_1806] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3365 ms
-2026-06-18T17:31:55.523-05:00  INFO 32128 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-18T17:31:55.825-05:00  INFO 32128 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ad22343
-2026-06-18T17:31:55.829-05:00  INFO 32128 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-18T17:31:55.849-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/northwind?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2026-06-18T17:31:56.220-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-06-18T17:31:56.345-05:00  INFO 32128 --- [lab_1806] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2026-06-18T17:31:56.410-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-06-18T17:31:56.993-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-18T17:31:57.139-05:00  WARN 32128 --- [lab_1806] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-06-18T17:31:59.222-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-18T17:31:59.229-05:00  INFO 32128 --- [lab_1806] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-18T17:32:00.080-05:00  INFO 32128 --- [lab_1806] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
-2026-06-18T17:32:00.251-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-06-18T17:32:01.509-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-06-18T17:32:01.580-05:00  INFO 32128 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-06-18T17:32:01.602-05:00  INFO 32128 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Started Lab1806Application in 10.487 seconds (process running for 11.435)
-2026-06-18T17:32:41.872-05:00  INFO 32128 --- [lab_1806] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-18T17:32:41.872-05:00  INFO 32128 --- [lab_1806] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-18T17:32:41.874-05:00  INFO 32128 --- [lab_1806] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-18T17:43:06.465-05:00  INFO 3128 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Starting Lab1806Application using Java 17.0.3.1 with PID 3128 (D:\Projects\lab_1806\target\classes started by User in D:\Projects\lab_1806)
+2026-06-18T17:43:06.465-05:00 DEBUG 3128 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-18T17:43:06.465-05:00  INFO 3128 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : No active profile set, falling back to 1 default profile: "default"
+2026-06-18T17:43:06.552-05:00  INFO 3128 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-18T17:43:06.552-05:00  INFO 3128 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-18T17:43:07.879-05:00  INFO 3128 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-18T17:43:08.040-05:00  INFO 3128 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 2 JPA repository interfaces.
+2026-06-18T17:43:09.643-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-06-18T17:43:09.661-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-18T17:43:09.661-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-06-18T17:43:09.791-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-18T17:43:09.791-05:00  INFO 3128 --- [lab_1806] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3239 ms
+2026-06-18T17:43:09.870-05:00  INFO 3128 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-18T17:43:10.168-05:00  INFO 3128 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b540838
+2026-06-18T17:43:10.168-05:00  INFO 3128 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-18T17:43:10.192-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/northwind?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2026-06-18T17:43:10.598-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-18T17:43:10.700-05:00  INFO 3128 --- [lab_1806] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-18T17:43:10.763-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-18T17:43:11.365-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-18T17:43:11.577-05:00  WARN 3128 --- [lab_1806] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-18T17:43:13.418-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-18T17:43:13.432-05:00  INFO 3128 --- [lab_1806] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-18T17:43:14.306-05:00  INFO 3128 --- [lab_1806] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-18T17:43:14.456-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-06-18T17:43:15.629-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-18T17:43:15.702-05:00  INFO 3128 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-06-18T17:43:15.709-05:00  INFO 3128 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Started Lab1806Application in 10.014 seconds (process running for 10.975)
+2026-06-18T17:43:30.267-05:00  INFO 3128 --- [lab_1806] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-18T17:43:30.267-05:00  INFO 3128 --- [lab_1806] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-18T17:43:30.267-05:00  INFO 3128 --- [lab_1806] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
 Hibernate: select u1_0.id,u1_0.enabled,u1_0.password,u1_0.username from usuarios u1_0 where u1_0.username=?
 Hibernate: select r1_0.usuario_id,r1_1.id,r1_1.nombre from usuario_roles r1_0 join roles r1_1 on r1_1.id=r1_0.rol_id where r1_0.usuario_id=?
+Hibernate: select p1_0.id,p1_0.nombre,p1_0.precio,p1_0.stock from productos p1_0 order by p1_0.id
 Hibernate: select u1_0.id,u1_0.enabled,u1_0.password,u1_0.username from usuarios u1_0 where u1_0.username=?
 Hibernate: select r1_0.usuario_id,r1_1.id,r1_1.nombre from usuario_roles r1_0 join roles r1_1 on r1_1.id=r1_0.rol_id where r1_0.usuario_id=?
-Hibernate: select u1_0.id,u1_0.enabled,u1_0.password,u1_0.username from usuarios u1_0 where u1_0.username=?
-Hibernate: select r1_0.usuario_id,r1_1.id,r1_1.nombre from usuario_roles r1_0 join roles r1_1 on r1_1.id=r1_0.rol_id where r1_0.usuario_id=?
-Hibernate: select u1_0.id,u1_0.enabled,u1_0.password,u1_0.username from usuarios u1_0 where u1_0.username=?
-Hibernate: select r1_0.usuario_id,r1_1.id,r1_1.nombre from usuario_roles r1_0 join roles r1_1 on r1_1.id=r1_0.rol_id where r1_0.usuario_id=?
-2026-06-18T17:32:43.906-05:00  WARN 32128 --- [lab_1806] [nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authorization.AuthorizationDeniedException: Access Denied]
-Hibernate: select u1_0.id,u1_0.enabled,u1_0.password,u1_0.username from usuarios u1_0 where u1_0.username=?
-Hibernate: select r1_0.usuario_id,r1_1.id,r1_1.nombre from usuario_roles r1_0 join roles r1_1 on r1_1.id=r1_0.rol_id where r1_0.usuario_id=?
-Hibernate: select p1_0.id,p1_0.nombre,p1_0.precio,p1_0.stock from productos p1_0 order by p1_0.id limit ?,?
-Hibernate: select u1_0.id,u1_0.enabled,u1_0.password,u1_0.username from usuarios u1_0 where u1_0.username=?
-Hibernate: select r1_0.usuario_id,r1_1.id,r1_1.nombre from usuario_roles r1_0 join roles r1_1 on r1_1.id=r1_0.rol_id where r1_0.usuario_id=?
-Hibernate: insert into productos (nombre,precio,stock) values (?,?,?)
-Hibernate: select u1_0.id,u1_0.enabled,u1_0.password,u1_0.username from usuarios u1_0 where u1_0.username=?
-Hibernate: select r1_0.usuario_id,r1_1.id,r1_1.nombre from usuario_roles r1_0 join roles r1_1 on r1_1.id=r1_0.rol_id where r1_0.usuario_id=?
-2026-06-18T17:32:45.068-05:00  WARN 32128 --- [lab_1806] [nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authorization.AuthorizationDeniedException: Access Denied]
-Hibernate: select u1_0.id,u1_0.enabled,u1_0.password,u1_0.username from usuarios u1_0 where u1_0.username=?
-Hibernate: select r1_0.usuario_id,r1_1.id,r1_1.nombre from usuario_roles r1_0 join roles r1_1 on r1_1.id=r1_0.rol_id where r1_0.usuario_id=?
+Hibernate: select p1_0.id,p1_0.nombre,p1_0.precio,p1_0.stock from productos p1_0 order by p1_0.id

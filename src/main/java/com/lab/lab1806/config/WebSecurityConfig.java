@@ -9,16 +9,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-/**
- * Spring Security con Basic Auth (Clase 10.1).
- *
- *   - STATELESS
- *   - csrf().disable()
- *   - /api/** requiere autenticación
- *
- * Los usuarios vienen de la BD vía UserDetailsServiceImpl
- * (auto-detectado por Spring; no hace falta declararlo como @Bean).
- */
 @Configuration
 @EnableMethodSecurity
 public class WebSecurityConfig {

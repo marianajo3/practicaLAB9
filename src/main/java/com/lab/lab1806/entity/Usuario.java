@@ -26,7 +26,6 @@ public class Usuario {
     @Column(nullable = false, unique = true, length = 60)
     private String username;
 
-    /** Hash BCrypt de la contraseña. */
     @Column(nullable = false, length = 200)
     private String password;
 

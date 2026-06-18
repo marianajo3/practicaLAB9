@@ -6,9 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Controller MVC (Thymeleaf). Usa el ProductoRepository (en memoria).
- */
 @Controller
 @RequestMapping("/productos")
 public class ProductoController {

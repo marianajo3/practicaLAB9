@@ -7,9 +7,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,14 +16,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-/**
- * API REST de productos (la que pruebas en Postman).
- * Separada del ProductoController MVC (Thymeleaf) para no mezclar.
- *
- * Reglas de seguridad (además del filtro de /api/** en WebSecurityConfig):
- *   - Lecturas (GET): USER o ADMIN
- *   - Escrituras (POST/PUT/PATCH/DELETE): solo ADMIN
- */
 @RestController
 @RequestMapping("/api/productos")
 public class ProductoApiController {
@@ -36,31 +25,11 @@ public class ProductoApiController {
     public ProductoApiController(ProductoRepository repo) {
         this.repo = repo;
     }
-
-    // ============== CRUD ==============
-
-    // 1) GET /api/productos[?page=0&size=10&sort=id,asc]
+    // 1) GET /api/productos  → lista simple ordenada por id
     @GetMapping
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
-    public ResponseEntity<?> listar(
-            @RequestParam(defaultValue = "0")  int page,
-            @RequestParam(defaultValue = "10") int size,
-            @RequestParam(defaultValue = "id,asc") String sort) {
-
-        String[] sortParts = sort.split(",");
-        Sort.Direction dir = sortParts.length > 1 && sortParts[1].equalsIgnoreCase("desc")
-                ? Sort.Direction.DESC : Sort.Direction.ASC;
-        Pageable pageable = PageRequest.of(page, size, Sort.by(dir, sortParts[0]));
-
-        Page<Producto> pageResult = repo.findAll(pageable);
-        return ResponseEntity.ok(Map.of(
-                "content",       pageResult.getContent(),
-                "page",          pageResult.getNumber(),
-                "size",          pageResult.getSize(),
-                "totalElements", pageResult.getTotalElements(),
-                "totalPages",    pageResult.getTotalPages(),
-                "last",          pageResult.isLast()
-        ));
+    public List<Producto> listar() {
+        return repo.findAll(Sort.by("id").ascending());
     }
 
     // 2) GET /api/productos/{id}

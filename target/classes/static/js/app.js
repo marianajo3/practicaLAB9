@@ -99,15 +99,14 @@ $(function () {
     // ---------- 4) CRUD de productos (consume REST API) ----------
     // USER → solo ve el listado (columna "Acciones" queda vacía)
     // ADMIN → ve Editar + Eliminar
-    function renderProductos(pageData) {
+    function renderProductos(productos) {
         const isAdmin = API.isAdmin();
-        console.log("[renderProductos] isAdmin =", isAdmin, "user =", API.user(), "roles =", API.roles());
         const acciones = (p) => isAdmin
             ? `<button class="btn-secondary btn-sm" data-edit='${JSON.stringify(p)}'>Editar</button>
                <button class="btn-del"               data-del="${p.id}">Eliminar</button>`
             : `<span class="muted small">solo lectura</span>`;
 
-        const rows = pageData.content.map(p => `
+        const rows = productos.map(p => `
             <tr>
                 <td>${p.id}</td>
                 <td>${p.nombre}</td>
