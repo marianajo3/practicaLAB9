@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Producto · Lab 1806</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <nav class="navbar">
+        <a th:href="@{/}" class="brand">🧪 Lab 1806</a>
+        <div>
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/productos}">Productos</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1 th:text="${producto.id == null} ? '➕ Nuevo producto' : '✏️ Editar producto #' + ${producto.id}">Producto</h1>
+
+        <form th:action="${producto.id == null} ? @{/productos} : @{|/productos/${producto.id}|}"
+              method="post" th:object="${producto}">
+            <label>Nombre
+                <input type="text" th:field="*{nombre}" required minlength="2" maxlength="80">
+            </label>
+            <label>Precio
+                <input type="number" th:field="*{precio}" step="0.01" min="0" required>
+            </label>
+            <label>Stock
+                <input type="number" th:field="*{stock}" min="0" required>
+            </label>
+            <button type="submit" class="btn">Guardar</button>
+            <a th:href="@{/productos}" class="btn-secondary">Cancelar</a>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+com\lab\lab1806\Lab1806Application.class
+com\lab\lab1806\controller\MensajeController.class
+com\lab\lab1806\entity\Producto$ProductoBuilder.class
+com\lab\lab1806\config\WebConfig.class
+com\lab\lab1806\controller\ApiExtrasController.class
+com\lab\lab1806\controller\ProductoApiController$ProductoRequest.class
+com\lab\lab1806\controller\ProductoApiController.class
+com\lab\lab1806\entity\Producto.class
+com\lab\lab1806\exception\GlobalExceptionHandler.class
+com\lab\lab1806\controller\HomeController.class
+com\lab\lab1806\config\DataInitializer.class
+com\lab\lab1806\repository\ProductoRepository.class
+com\lab\lab1806\controller\ProductoController.class

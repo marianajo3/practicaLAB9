@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "Lab 1806 - Productos API",
+    "description": "Colección lista para importar en Postman. Cubre CRUD + búsqueda + paginación + stats.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "1. Listar todos (paginado por defecto)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/productos" }
+    },
+    {
+      "name": "2. Listar con paginación y orden",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/productos?page=0&size=5&sort=precio,desc", "query": [
+          { "key": "page", "value": "0" },
+          { "key": "size", "value": "5" },
+          { "key": "sort", "value": "precio,desc" }
+        ]}
+      }
+    },
+    {
+      "name": "3. Obtener uno por ID",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/productos/1" }
+    },
+    {
+      "name": "4. Crear producto (POST)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Teclado mecánico RGB\",\n  \"precio\": 380.50,\n  \"stock\": 25\n}"
+        },
+        "url": "{{baseUrl}}/api/productos"
+      }
+    },
+    {
+      "name": "5. Reemplazo completo (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Laptop Gamer\",\n  \"precio\": 5500.00,\n  \"stock\": 5\n}"
+        },
+        "url": "{{baseUrl}}/api/productos/1"
+      }
+    },
+    {
+      "name": "6. Actualización parcial (PATCH)",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"stock\": 99 }"
+        },
+        "url": "{{baseUrl}}/api/productos/1"
+      }
+    },
+    {
+      "name": "7. Eliminar (DELETE)",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/api/productos/4" }
+    },
+    {
+      "name": "8. Buscar por nombre",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/productos/buscar?nombre=lap", "query": [
+          { "key": "nombre", "value": "lap" }
+        ]}
+      }
+    },
+    {
+      "name": "9. Filtrar por stock mínimo",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/productos/stock?min=20", "query": [
+          { "key": "min", "value": "20" }
+        ]}
+      }
+    },
+    {
+      "name": "10. Health check",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/health" }
+    },
+    {
+      "name": "11. Estadísticas",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/stats" }
+    }
+  ]
+}
