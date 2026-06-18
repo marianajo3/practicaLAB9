@@ -92,16 +92,22 @@ $(function () {
     });
 
     // ---------- 4) CRUD de productos (consume REST API) ----------
+    // USER → solo ve el listado (columna "Acciones" queda vacía)
+    // ADMIN → ve Editar + Eliminar
     function renderProductos(pageData) {
+        const isAdmin = API.isAdmin();
+        const acciones = (p) => isAdmin
+            ? `<button class="btn-secondary btn-sm" data-edit='${JSON.stringify(p)}'>Editar</button>
+               <button class="btn-del"               data-del="${p.id}">Eliminar</button>`
+            : `<span class="muted small">solo lectura</span>`;
+
         const rows = pageData.content.map(p => `
             <tr>
                 <td>${p.id}</td>
                 <td>${p.nombre}</td>
                 <td>S/ ${p.precio.toFixed(2)}</td>
                 <td>${p.stock}</td>
-                <td>
-                    <button class="btn-del" data-del="${p.id}">Eliminar</button>
-                </td>
+                <td>${acciones(p)}</td>
             </tr>
         `).join("");
         $("#productosTable tbody").html(rows || `<tr><td colspan="5" class="muted">No hay productos.</td></tr>`);
@@ -122,6 +128,21 @@ $(function () {
         API.eliminarProducto(id)
             .done(() => cargarProductos())
             .fail(xhr => alert("No se pudo eliminar (" + xhr.status + "). Solo ADMIN."));
+    });
+
+    // Editar producto: pide los nuevos valores y manda PUT (solo ADMIN)
+    $("#productosTable").on("click", "button[data-edit]", function () {
+        const p = $(this).data("edit");               // {id, nombre, precio, stock}
+        const nombre = prompt("Nuevo nombre:", p.nombre);
+        if (nombre === null) return;                  // canceló
+        const precio = parseFloat(prompt("Nuevo precio:", p.precio));
+        const stock  = parseInt(prompt("Nuevo stock:", p.stock));
+        if (!nombre || isNaN(precio) || isNaN(stock)) {
+            alert("Datos inválidos"); return;
+        }
+        API.actualizarProducto(p.id, { nombre, precio, stock })
+            .done(() => cargarProductos())
+            .fail(xhr => alert("No se pudo editar (" + xhr.status + "). Solo ADMIN."));
     });
 
     // crear producto desde el form
