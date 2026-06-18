@@ -2,6 +2,7 @@ com\lab\lab1806\Lab1806Application.class
 com\lab\lab1806\controller\MensajeController.class
 com\lab\lab1806\entity\Producto$ProductoBuilder.class
 com\lab\lab1806\config\WebConfig.class
+com\lab\lab1806\config\WebSecurityConfig.class
 com\lab\lab1806\controller\ApiExtrasController.class
 com\lab\lab1806\controller\ProductoApiController$ProductoRequest.class
 com\lab\lab1806\controller\ProductoApiController.class

@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,10 @@ import java.util.Map;
 /**
  * API REST de productos (la que pruebas en Postman).
  * Separada del ProductoController MVC (Thymeleaf) para no mezclar.
+ *
+ * Reglas de seguridad (además del filtro de /api/** en WebSecurityConfig):
+ *   - Lecturas (GET): USER o ADMIN
+ *   - Escrituras (POST/PUT/PATCH/DELETE): solo ADMIN
  */
 @RestController
 @RequestMapping("/api/productos")
@@ -36,6 +41,7 @@ public class ProductoApiController {
 
     // 1) GET /api/productos[?page=0&size=10&sort=id,asc]
     @GetMapping
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<?> listar(
             @RequestParam(defaultValue = "0")  int page,
             @RequestParam(defaultValue = "10") int size,
@@ -59,6 +65,7 @@ public class ProductoApiController {
 
     // 2) GET /api/productos/{id}
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<Producto> obtener(@PathVariable Long id) {
         return repo.findById(id)
                 .map(ResponseEntity::ok)
@@ -67,6 +74,7 @@ public class ProductoApiController {
 
     // 3) POST /api/productos   body: {nombre, precio, stock}
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Producto> crear(@Valid @RequestBody ProductoRequest body) {
         Producto p = Producto.builder()
                 .nombre(body.nombre())
@@ -78,6 +86,7 @@ public class ProductoApiController {
 
     // 4) PUT /api/productos/{id}  (reemplazo completo)
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Producto> actualizar(@PathVariable Long id, @Valid @RequestBody ProductoRequest body) {
         return repo.findById(id).map(existing -> {
             existing.setNombre(body.nombre());
@@ -89,6 +98,7 @@ public class ProductoApiController {
 
     // 5) PATCH /api/productos/{id}  (actualización parcial)
     @PatchMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Producto> patch(@PathVariable Long id, @RequestBody Map<String, Object> cambios) {
         return repo.findById(id).map(p -> {
             if (cambios.containsKey("nombre")) p.setNombre((String) cambios.get("nombre"));
@@ -100,6 +110,7 @@ public class ProductoApiController {
 
     // 6) DELETE /api/productos/{id}
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         if (!repo.existsById(id)) return ResponseEntity.notFound().build();
         repo.deleteById(id);
@@ -110,12 +121,14 @@ public class ProductoApiController {
 
     // 7) GET /api/productos/buscar?nombre=lap
     @GetMapping("/buscar")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public List<Producto> buscar(@RequestParam String nombre) {
         return repo.findByNombreContainingIgnoreCase(nombre);
     }
 
     // 8) GET /api/productos/stock?min=10
     @GetMapping("/stock")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public List<Producto> stockMinimo(@RequestParam(defaultValue = "0") Integer min) {
         return repo.findByStockGreaterThanEqual(min);
     }

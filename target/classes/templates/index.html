@@ -10,26 +10,64 @@
     <nav class="navbar">
         <a th:href="@{/}" class="brand">🧪 Lab 1806</a>
         <div>
+            <span id="sessionInfo" class="hidden muted small"></span>
+            <button id="btnLogout" class="btn-secondary btn-sm hidden">Cerrar sesión</button>
             <a th:href="@{/}">Inicio</a>
-            <a th:href="@{/productos}">Productos</a>
-            <a th:href="@{/productos/nuevo}">Nuevo</a>
+            <a th:href="@{/productos}">Productos (Thymeleaf)</a>
         </div>
     </nav>
 
     <main>
         <h1>👋 Bienvenido al Lab 1806</h1>
-        <p>Proyecto base con <b>Spring Boot + Thymeleaf + jQuery</b>.</p>
-        <p>Este es el nuevo <i>lienzo</i> según tu <code>pom.xml</code> actual (sin Spring Security / JPA).</p>
-        <ul>
-            <li><a th:href="@{/productos}">📦 Ver productos (Thymeleaf + jQuery)</a></li>
-            <li><a th:href="@{/productos/nuevo}">➕ Crear producto (form Thymeleaf)</a></li>
-        </ul>
+        <p>Proyecto base con <b>Spring Boot + Spring Security (Basic Auth) + JPA + jQuery/AJAX</b>.</p>
 
-        <h3>🔌 Endpoints JSON consumidos por jQuery</h3>
-        <button class="btn-test" data-endpoint="/api/mensaje/publico">GET /api/mensaje/publico</button>
-        <button class="btn-test" data-endpoint="/api/mensaje/privado">GET /api/mensaje/privado</button>
-        <button class="btn-test" data-endpoint="/api/mensaje/admin">GET /api/mensaje/admin</button>
-        <pre id="testOutput" class="output">— las respuestas aparecerán aquí —</pre>
+        <!-- ============ LOGIN (única pantalla de login) ============ -->
+        <section id="loginCard" class="card">
+            <h3>🔐 Iniciar sesión (Basic Auth)</h3>
+            <label>Usuario
+                <input id="loginUser" type="text" placeholder="admin o user" autocomplete="username">
+            </label>
+            <label>Contraseña
+                <input id="loginPass" type="password" autocomplete="current-password">
+            </label>
+            <button id="btnLogin">Entrar</button>
+            <p class="muted small">
+                Usuarios de prueba: <code>admin/admin123</code> (ADMIN) · <code>user/user123</code> (USER)
+            </p>
+            <p id="loginMsg" class="small"></p>
+        </section>
+
+        <!-- ============ CREAR PRODUCTO (solo ADMIN) ============ -->
+        <section id="crearProductoCard" class="card hidden">
+            <h3>➕ Crear producto <small class="muted">(solo ADMIN)</small></h3>
+            <form id="formCrear">
+                <label>Nombre <input id="pNombre" type="text" maxlength="80"></label>
+                <label>Precio <input id="pPrecio" type="number" step="0.01" min="0"></label>
+                <label>Stock  <input id="pStock"  type="number" min="0"></label>
+                <button id="btnCrearProducto">Crear</button>
+            </form>
+        </section>
+
+        <!-- ============ LISTADO DE PRODUCTOS (USER y ADMIN) ============ -->
+        <section id="productosCard" class="card hidden">
+            <h3>📦 Listado de productos</h3>
+            <table id="productosTable">
+                <thead>
+                    <tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Stock</th><th>Acciones</th></tr>
+                </thead>
+                <tbody><tr><td colspan="5" class="muted">Cargando…</td></tr></tbody>
+            </table>
+            <p id="adminOnlyHint" class="muted small hidden">Sos ADMIN, podés crear/eliminar productos.</p>
+        </section>
+
+        <!-- ============ ENDPOINTS DE MENSAJE ============ -->
+        <section class="card">
+            <h3>🔌 Probar endpoints JSON (requieren login)</h3>
+            <button class="btn-test" data-endpoint="/api/mensaje/publico">GET /api/mensaje/publico</button>
+            <button class="btn-test" data-endpoint="/api/mensaje/privado">GET /api/mensaje/privado</button>
+            <button class="btn-test" data-endpoint="/api/mensaje/admin">GET /api/mensaje/admin</button>
+            <pre id="testOutput" class="output">— las respuestas aparecerán aquí —</pre>
+        </section>
     </main>
 
     <script th:src="@{/js/api.js}"></script>

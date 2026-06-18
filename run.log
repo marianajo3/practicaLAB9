@@ -1,0 +1,67 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.lab:lab_1806 >--------------------------
+[INFO] Building lab_1806 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.3.4:run (default-cli) > test-compile @ lab_1806 >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ lab_1806 ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 7 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ lab_1806 ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 12 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ lab_1806 ---
+[INFO] skip non existing resourceDirectory D:\Projects\lab_1806\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ lab_1806 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.3.4:run (default-cli) < test-compile @ lab_1806 <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.3.4:run (default-cli) @ lab_1806 ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-06-18T15:12:39.825-05:00  INFO 41632 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Starting Lab1806Application using Java 17.0.3.1 with PID 41632 (D:\Projects\lab_1806\target\classes started by User in D:\Projects\lab_1806)
+2026-06-18T15:12:39.825-05:00 DEBUG 41632 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-18T15:12:39.825-05:00  INFO 41632 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : No active profile set, falling back to 1 default profile: "default"
+2026-06-18T15:12:39.874-05:00  INFO 41632 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-18T15:12:39.874-05:00  INFO 41632 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-18T15:12:40.470-05:00  INFO 41632 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-18T15:12:40.522-05:00  INFO 41632 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2026-06-18T15:12:41.178-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-06-18T15:12:41.178-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-18T15:12:41.178-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-06-18T15:12:41.241-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-18T15:12:41.241-05:00  INFO 41632 --- [lab_1806] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1367 ms
+2026-06-18T15:12:41.274-05:00  INFO 41632 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-18T15:12:41.416-05:00  INFO 41632 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@234de1b0
+2026-06-18T15:12:41.416-05:00  INFO 41632 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-18T15:12:41.423-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/northwind?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2026-06-18T15:12:41.575-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-18T15:12:41.627-05:00  INFO 41632 --- [lab_1806] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-18T15:12:41.645-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-18T15:12:41.901-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-18T15:12:41.949-05:00  WARN 41632 --- [lab_1806] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-18T15:12:42.631-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-18T15:12:42.631-05:00  INFO 41632 --- [lab_1806] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-18T15:12:43.155-05:00  INFO 41632 --- [lab_1806] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-06-18T15:12:43.235-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-06-18T15:12:43.743-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-18T15:12:43.775-05:00  INFO 41632 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-06-18T15:12:43.785-05:00  INFO 41632 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Started Lab1806Application in 4.28 seconds (process running for 4.683)
+Hibernate: select count(*) from productos p1_0
