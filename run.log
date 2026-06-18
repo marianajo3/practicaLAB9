@@ -35,35 +35,35 @@
 
  :: Spring Boot ::                (v3.3.4)
 
-2026-06-18T15:43:28.174-05:00  INFO 27240 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Starting Lab1806Application using Java 17.0.3.1 with PID 27240 (D:\Projects\lab_1806\target\classes started by User in D:\Projects\lab_1806)
-2026-06-18T15:43:28.180-05:00 DEBUG 27240 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Running with Spring Boot v3.3.4, Spring v6.1.13
-2026-06-18T15:43:28.182-05:00  INFO 27240 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : No active profile set, falling back to 1 default profile: "default"
-2026-06-18T15:43:28.294-05:00  INFO 27240 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-06-18T15:43:28.294-05:00  INFO 27240 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-06-18T15:43:29.559-05:00  INFO 27240 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-06-18T15:43:29.686-05:00  INFO 27240 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 1 JPA repository interface.
-2026-06-18T15:43:31.168-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2026-06-18T15:43:31.198-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-06-18T15:43:31.198-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
-2026-06-18T15:43:31.337-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-06-18T15:43:31.339-05:00  INFO 27240 --- [lab_1806] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3042 ms
-2026-06-18T15:43:31.433-05:00  INFO 27240 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-06-18T15:43:31.731-05:00  INFO 27240 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@606863da
-2026-06-18T15:43:31.734-05:00  INFO 27240 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-06-18T15:43:31.755-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/northwind?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2026-06-18T15:43:32.106-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-06-18T15:43:32.222-05:00  INFO 27240 --- [lab_1806] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2026-06-18T15:43:32.295-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-06-18T15:43:32.876-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-06-18T15:43:33.005-05:00  WARN 27240 --- [lab_1806] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-06-18T15:43:34.618-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-06-18T15:43:34.631-05:00  INFO 27240 --- [lab_1806] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-06-18T15:43:35.846-05:00  INFO 27240 --- [lab_1806] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
-2026-06-18T15:43:36.015-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2026-06-18T15:43:37.216-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-06-18T15:43:37.279-05:00  INFO 27240 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2026-06-18T15:43:37.301-05:00  INFO 27240 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Started Lab1806Application in 9.901 seconds (process running for 10.758)
+2026-06-18T15:49:17.003-05:00  INFO 39116 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Starting Lab1806Application using Java 17.0.3.1 with PID 39116 (D:\Projects\lab_1806\target\classes started by User in D:\Projects\lab_1806)
+2026-06-18T15:49:17.010-05:00 DEBUG 39116 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-18T15:49:17.010-05:00  INFO 39116 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : No active profile set, falling back to 1 default profile: "default"
+2026-06-18T15:49:17.098-05:00  INFO 39116 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-18T15:49:17.098-05:00  INFO 39116 --- [lab_1806] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-18T15:49:18.407-05:00  INFO 39116 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-18T15:49:18.523-05:00  INFO 39116 --- [lab_1806] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 1 JPA repository interface.
+2026-06-18T15:49:19.960-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-06-18T15:49:19.989-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-18T15:49:19.989-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-06-18T15:49:20.121-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-18T15:49:20.126-05:00  INFO 39116 --- [lab_1806] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3022 ms
+2026-06-18T15:49:20.221-05:00  INFO 39116 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-18T15:49:20.544-05:00  INFO 39116 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@606863da
+2026-06-18T15:49:20.548-05:00  INFO 39116 --- [lab_1806] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-18T15:49:20.567-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/northwind?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2026-06-18T15:49:20.881-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-18T15:49:21.003-05:00  INFO 39116 --- [lab_1806] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-18T15:49:21.078-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-18T15:49:21.663-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-18T15:49:21.781-05:00  WARN 39116 --- [lab_1806] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-18T15:49:23.399-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-18T15:49:23.413-05:00  INFO 39116 --- [lab_1806] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-18T15:49:24.559-05:00  INFO 39116 --- [lab_1806] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-06-18T15:49:24.711-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-06-18T15:49:25.926-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-18T15:49:25.993-05:00  INFO 39116 --- [lab_1806] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-06-18T15:49:26.017-05:00  INFO 39116 --- [lab_1806] [  restartedMain] com.lab.lab1806.Lab1806Application       : Started Lab1806Application in 9.705 seconds (process running for 10.599)
 Hibernate: select count(*) from productos p1_0
-2026-06-18T15:43:38.968-05:00  INFO 27240 --- [lab_1806] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-18T15:43:38.968-05:00  INFO 27240 --- [lab_1806] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-06-18T15:43:38.968-05:00  INFO 27240 --- [lab_1806] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-18T15:49:29.026-05:00  INFO 39116 --- [lab_1806] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-18T15:49:29.026-05:00  INFO 39116 --- [lab_1806] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-18T15:49:29.028-05:00  INFO 39116 --- [lab_1806] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

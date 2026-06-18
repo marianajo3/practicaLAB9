@@ -43,17 +43,22 @@ $(function () {
         const p = $("#loginPass").val().trim();
         if (!u || !p) { alert("Ingresa usuario y contraseña"); return; }
 
-        // 1) guardo credenciales
-        API.login(u, p);
-        // 2) consulto /api/me para saber el rol y validar credenciales
+        console.log("[login] clicked, user=" + u);
+        API.login(u, p);                                  // setea header
+        console.log("[login] auth header listo, llamando /api/me");
+
         API.me()
             .done(function (data) {
-                API.login(data.username, p, data.roles);   // actualizo roles
-                $("#loginMsg").text("✅ Bienvenido " + data.username);
+                console.log("[login] /api/me OK", data);
+                API.login(data.username, p, data.roles);  // actualizo roles
+                console.log("[login] roles en sessionStorage =", API.roles(),
+                            "isAdmin =", API.isAdmin());
+                $("#loginMsg").text("✅ Bienvenido " + data.username + " (" + data.roles.join(",") + ")");
                 refreshSession();
                 cargarProductos();
             })
             .fail(function (xhr) {
+                console.warn("[login] /api/me FAIL", xhr.status, xhr.responseText);
                 API.logout();
                 $("#loginMsg").text("❌ Credenciales inválidas (" + xhr.status + ")");
                 refreshSession();
@@ -96,6 +101,7 @@ $(function () {
     // ADMIN → ve Editar + Eliminar
     function renderProductos(pageData) {
         const isAdmin = API.isAdmin();
+        console.log("[renderProductos] isAdmin =", isAdmin, "user =", API.user(), "roles =", API.roles());
         const acciones = (p) => isAdmin
             ? `<button class="btn-secondary btn-sm" data-edit='${JSON.stringify(p)}'>Editar</button>
                <button class="btn-del"               data-del="${p.id}">Eliminar</button>`
