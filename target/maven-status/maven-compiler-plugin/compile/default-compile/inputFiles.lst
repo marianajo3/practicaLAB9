@@ -1,4 +1,3 @@
-D:\Projects\lab_1806\src\main\java\com\lab\lab1806\config\DataInitializer.java
 D:\Projects\lab_1806\src\main\java\com\lab\lab1806\config\WebConfig.java
 D:\Projects\lab_1806\src\main\java\com\lab\lab1806\config\WebSecurityConfig.java
 D:\Projects\lab_1806\src\main\java\com\lab\lab1806\controller\ApiExtrasController.java
@@ -7,6 +6,10 @@ D:\Projects\lab_1806\src\main\java\com\lab\lab1806\controller\MensajeController.
 D:\Projects\lab_1806\src\main\java\com\lab\lab1806\controller\ProductoApiController.java
 D:\Projects\lab_1806\src\main\java\com\lab\lab1806\controller\ProductoController.java
 D:\Projects\lab_1806\src\main\java\com\lab\lab1806\entity\Producto.java
+D:\Projects\lab_1806\src\main\java\com\lab\lab1806\entity\Rol.java
+D:\Projects\lab_1806\src\main\java\com\lab\lab1806\entity\Usuario.java
 D:\Projects\lab_1806\src\main\java\com\lab\lab1806\exception\GlobalExceptionHandler.java
 D:\Projects\lab_1806\src\main\java\com\lab\lab1806\Lab1806Application.java
 D:\Projects\lab_1806\src\main\java\com\lab\lab1806\repository\ProductoRepository.java
+D:\Projects\lab_1806\src\main\java\com\lab\lab1806\repository\UsuarioRepository.java
+D:\Projects\lab_1806\src\main\java\com\lab\lab1806\security\UserDetailsServiceImpl.java
